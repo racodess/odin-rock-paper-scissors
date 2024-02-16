@@ -14,18 +14,18 @@ function playGame(){
 
 		let outcome = playRound(playerChoice, computerChoice);
 		if (playerChoice === computerChoice)
-			console.log(`It's a tie!`);
+			console.log(`It's a tie!\n`);
 		else if (outcome === true){
 			++playerScore;
-			console.log(`You Win! ${playerChoice} beats ${computerChoice}`);
+			console.log(`You Win! ${playerChoice} beats ${computerChoice}\n`);
 		}
 		else if (outcome === false && playerChoice != computerChoice){
 			++computerScore;
-			console.log(`You Lose! ${computerChoice} beats ${playerChoice}`);
+			console.log(`You Lose! ${computerChoice} beats ${playerChoice}\n`);
 		}
 	}
 
-		return `Player score: ${playerScore}\nComputer score: ${computerScore}`;
+		return `\nPlayer score: ${playerScore}\nComputer score: ${computerScore}`;
 }
 
 function playRound(playerSelection, computerSelection){
@@ -54,3 +54,5 @@ function getComputerChoice() {
 		(choice === 1) ? "paper" :
 		"scissors";
 }
+
+playGame()
