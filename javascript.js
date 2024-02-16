@@ -25,7 +25,9 @@ function playGame(){
 		}
 	}
 
-		return `\nPlayer score: ${playerScore}\nComputer score: ${computerScore}`;
+	console.log(`\nPlayer score: ${playerScore}\nComputer score: ${computerScore}`);
+
+	return; 
 }
 
 function playRound(playerSelection, computerSelection){
@@ -55,4 +57,4 @@ function getComputerChoice() {
 		"scissors";
 }
 
-console.log(playGame());
+playGame()
