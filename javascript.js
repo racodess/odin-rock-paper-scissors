@@ -1,25 +1,34 @@
 function playRound(playerSelection, computerSelection){
 
 	switch(playerSelection){
+
 		case "rock":
 			switch(computerSelection){
 				case "paper":
-					return `You Lose! ${computerselection} beats ${playerselection}`;
+					return `You Lose! ${computerSelection} beats ${playerSelection}`;
 				case "scissors":
 					return `You Win! ${playerSelection} beats ${computerSelection}`;
+			default:
+					return `It's a tie!`;
+			}
+
 		case "paper":
 			switch(computerSelection){
 				case "scissors":
 					return `You Lose! ${computerSelection} beats ${playerSelection}`;
 				case "rock":
 					return `You Win! ${playerSelection} beats ${computerSelection}`;
+			default:
+					return `It's a tie!`;
+			}
+
 		case "scissors":
 			switch(computerSelection){
 				case "rock":
 					return `You Lose! ${computerSelection} beats ${playerSelection}`;
 				case "paper":
 					return `You Win! ${playerSelection} beats ${computerSelection}`;
-		default:
+				default:
 					return `It's a tie!`;
 			}
 	}
