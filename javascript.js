@@ -1,23 +1,41 @@
 function playGame(){
 	let playerScore, computerScore;
+	let playerChoice, computerChoice;
 
+	playerScore = 0;
+	computerScore = 0;
+	
 	for(let i = 0; i < 5; ++i){
-		playerScore = 0;
-		computerScore = 0;
+		playerChoice = getPlayerChoice();
+		computerChoice = getComputerChoice();
 		
-		console.log(playRound(getPlayerChoice(), getComputerChoice()));
+		console.log(`You chose: ${playerChoice}`);
+		console.log(`Computer chose: ${computerChoice}\n`);
 
+		let outcome = playRound(playerChoice, computerChoice);
+		if (playerChoice === computerChoice)
+			console.log(`It's a tie!`);
+		else if (outcome === true){
+			++playerScore;
+			console.log(`You Win! ${playerChoice} beats ${computerChoice}`);
+		}
+		else if (outcome === false && playerChoice != computerChoice){
+			++computerScore;
+			console.log(`You Lose! ${computerChoice} beats ${playerChoice}`);
+		}
 	}
+
+		return `Player score: ${playerScore}\nComputer score: ${computerScore}`;
 }
 
 function playRound(playerSelection, computerSelection){
 	let win = false;
 
-	if (playerSelection === "rock" && computerSelection === "scissors")
+	if ((playerSelection === "rock") && (computerSelection === "scissors"))
 		win = true;
-	else if (playerSelection === "paper" && computerSelection === "rock")
+	else if ((playerSelection === "paper") && (computerSelection === "rock"))
 		win = true;
-	else if (playerSelection === "scissors" && computerSelection === "paper")
+	else if ((playerSelection === "scissors") && (computerSelection === "paper"))
 		win = true;
 
 	return win;
