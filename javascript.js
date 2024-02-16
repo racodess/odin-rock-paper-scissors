@@ -9,19 +9,19 @@ function playGame(){
 		playerChoice = getPlayerChoice();
 		computerChoice = getComputerChoice();
 		
-		console.log(`You chose: ${playerChoice}`);
-		console.log(`Computer chose: ${computerChoice}\n`);
+		console.log(`\nYou chose: ${playerChoice}`);
+		console.log(`Computer chose: ${computerChoice}`);
 
 		let outcome = playRound(playerChoice, computerChoice);
 		if (playerChoice === computerChoice)
-			console.log(`It's a tie!\n`);
+			console.log(`\nIt's a tie!`);
 		else if (outcome === true){
 			++playerScore;
-			console.log(`You Win! ${playerChoice} beats ${computerChoice}\n`);
+			console.log(`\nYou Win! ${playerChoice} beats ${computerChoice}`);
 		}
 		else if (outcome === false && playerChoice != computerChoice){
 			++computerScore;
-			console.log(`You Lose! ${computerChoice} beats ${playerChoice}\n`);
+			console.log(`\nYou Lose! ${computerChoice} beats ${playerChoice}`);
 		}
 	}
 
@@ -55,4 +55,4 @@ function getComputerChoice() {
 		"scissors";
 }
 
-playGame()
+console.log(playGame());
