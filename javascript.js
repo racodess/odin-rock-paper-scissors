@@ -1,37 +1,26 @@
-function playRound(playerSelection, computerSelection){
+function playGame(){
+	let playerScore, computerScore;
 
-	switch(playerSelection){
+	for(let i = 0; i < 5; ++i){
+		playerScore = 0;
+		computerScore = 0;
+		
+		console.log(playRound(getPlayerChoice(), getComputerChoice()));
 
-		case "rock":
-			switch(computerSelection){
-				case "paper":
-					return `You Lose! ${computerSelection} beats ${playerSelection}`;
-				case "scissors":
-					return `You Win! ${playerSelection} beats ${computerSelection}`;
-			default:
-					return `It's a tie!`;
-			}
-
-		case "paper":
-			switch(computerSelection){
-				case "scissors":
-					return `You Lose! ${computerSelection} beats ${playerSelection}`;
-				case "rock":
-					return `You Win! ${playerSelection} beats ${computerSelection}`;
-			default:
-					return `It's a tie!`;
-			}
-
-		case "scissors":
-			switch(computerSelection){
-				case "rock":
-					return `You Lose! ${computerSelection} beats ${playerSelection}`;
-				case "paper":
-					return `You Win! ${playerSelection} beats ${computerSelection}`;
-				default:
-					return `It's a tie!`;
-			}
 	}
+}
+
+function playRound(playerSelection, computerSelection){
+	let win = false;
+
+	if (playerSelection === "rock" && computerSelection === "scissors")
+		win = true;
+	else if (playerSelection === "paper" && computerSelection === "rock")
+		win = true;
+	else if (playerSelection === "scissors" && computerSelection === "paper")
+		win = true;
+
+	return win;
 }
 
 function getPlayerChoice() {
