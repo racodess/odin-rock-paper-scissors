@@ -1,14 +1,24 @@
-function playGame(playerSelection, computerSelection, win) {
-  console.log(`\nYou chose: ${playerSelection}`);
-  console.log(`Computer chose: ${computerSelection}`);
+function playGame() {
+  let playerScore, computerScore;
+  let playerChoice, computerChoice;
 
-  if (playerSelection === computerSelection) console.log(`\nIt's a tie!`);
-  else if (win === true) {
+  playerScore = 0;
+  computerScore = 0;
+
+  playerChoice = getPlayerChoice();
+  computerChoice = getComputerChoice();
+
+  console.log(`\nYou chose: ${playerChoice}`);
+  console.log(`Computer chose: ${computerChoice}`);
+
+  let outcome = playRound(playerChoice, computerChoice);
+  if (playerChoice === computerChoice) console.log(`\nIt's a tie!`);
+  else if (outcome === true) {
     ++playerScore;
-    console.log(`\nYou Win! ${playerSelection} beats ${computerSelection}`);
-  } else if (win === false && playerSelection != computerSelection) {
+    console.log(`\nYou Win! ${playerChoice} beats ${computerChoice}`);
+  } else if (outcome === false && playerChoice != computerChoice) {
     ++computerScore;
-    console.log(`\nYou Lose! ${computerSelection} beats ${playerSelection}`);
+    console.log(`\nYou Lose! ${computerChoice} beats ${playerChoice}`);
   }
 
   console.log(
@@ -54,6 +64,5 @@ document.body.addEventListener("click", (event) => {
       break;
   }
 
-  let win = playRound(playerSelection, computerSelection);
-  playGame(playerSelection, computerSelection, win);
+  playRound(playerSelection, computerSelection);
 });
