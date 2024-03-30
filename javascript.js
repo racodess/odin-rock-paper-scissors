@@ -2,19 +2,12 @@ function playGame(playerSelection, computerSelection, win) {
   console.log(`\nYou chose: ${playerSelection}`);
   console.log(`Computer chose: ${computerSelection}`);
 
-  let win = playRound(playerSelection, computerSelection);
   if (playerSelection === computerSelection) console.log(`\nIt's a tie!`);
   else if (win === true) {
-    ++playerScore;
     console.log(`\nYou Win! ${playerSelection} beats ${computerSelection}`);
   } else if (win === false && playerSelection != computerSelection) {
-    ++computerScore;
     console.log(`\nYou Lose! ${computerSelection} beats ${playerSelection}`);
   }
-
-  console.log(
-    `\nPlayer score: ${playerScore}\nComputer score: ${computerScore}`,
-  );
 
   return;
 }
