@@ -40,3 +40,13 @@ body {
 #score-container {
   flex-grow: 1;
 }
+
+#player-side,
+#computer-side {
+  display: flex;
+  gap: 30px;
+}
+
+img {
+  height: 200px;
+}
