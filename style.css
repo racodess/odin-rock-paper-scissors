@@ -2,7 +2,12 @@
   border: 1px solid white;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   margin: 0;
   background-color: black;
   color: white;
@@ -17,6 +22,7 @@ body {
 }
 
 #container {
+  height: 100%;
   display: flex;
   justify-content: center;
 }
