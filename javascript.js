@@ -2,11 +2,11 @@ function playGame(playerSelection, computerSelection, win) {
   console.log(`\nYou chose: ${playerSelection}`);
   console.log(`Computer chose: ${computerSelection}`);
 
-  if (playerSelection === computerSelection) console.log(`\nIt's a tie!`);
+  if (playerSelection === computerSelection) console.log(`\nTie!`);
   else if (win === true) {
-    console.log(`\nYou Win! ${playerSelection} beats ${computerSelection}`);
+    console.log(`\nYou Win!`);
   } else if (win === false && playerSelection != computerSelection) {
-    console.log(`\nYou Lose! ${computerSelection} beats ${playerSelection}`);
+    console.log(`\nYou Lose!`);
   }
 
   return;
