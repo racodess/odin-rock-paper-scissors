@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+
+#header {
+  text-align: center;
+}
+
+#footer {
+  text-align: end;
+}
+
+#container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#left-container,
+#right-container {
+  width: 20%;
+}
