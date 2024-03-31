@@ -8,8 +8,8 @@ body {
   height: 100dvh;
   display: flex;
   flex-direction: column;
-  background-color: black;
-  color: white;
+  background-color: #101010;
+  color: #e0e0e0;
   font-family: "Noto Sans Mono", monospace;
   margin: 0px 10px;
 }
