@@ -6,7 +6,6 @@ body {
   height: 100dvh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: black;
   color: white;
 }
@@ -22,6 +21,7 @@ body {
 #center-container {
   display: flex;
   justify-content: center;
+  flex-grow: 1;
 }
 
 #middle-container {
