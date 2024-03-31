@@ -3,6 +3,10 @@
 }
 
 body {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: black;
   color: white;
 }
@@ -13,13 +17,6 @@ body {
 
 #footer {
   text-align: end;
-}
-
-#container {
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 #center-container {
