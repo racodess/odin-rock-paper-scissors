@@ -44,7 +44,22 @@ body {
 #player-side,
 #computer-side {
   display: flex;
-  gap: 30px;
+  gap: 50px;
+}
+
+#left-container,
+#right-container {
+  display: flex;
+  flex-grow: 1;
+  font-size: 36px;
+}
+
+#left-container {
+  justify-content: start;
+}
+
+#right-container {
+  justify-content: end;
 }
 
 img {
