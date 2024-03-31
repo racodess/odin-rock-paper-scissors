@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap");
 
+@font-face {
+  font-family: "Subway Ticker";
+  src: url("./fonts/subway-ticker.regular.ttf");
+}
+
 * {
   margin: 0px;
 }
@@ -10,7 +15,8 @@ body {
   flex-direction: column;
   background-color: #101010;
   color: #e0e0e0;
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "Subway Ticker", "Noto Sans Mono", monospace;
+  font-size: 36px;
   margin: 0px 10px;
 }
 
@@ -22,6 +28,7 @@ body {
 #footer {
   text-align: end;
   padding-bottom: 1px;
+  font-size: 14px;
 }
 
 #center-container {
@@ -54,7 +61,6 @@ body {
   display: flex;
   flex-direction: column;
   flex: auto;
-  font-size: 36px;
 }
 
 #left-container {
