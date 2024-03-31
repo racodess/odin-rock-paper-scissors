@@ -1,14 +1,8 @@
 * {
-  border: 1px solid white;
-}
-
-html {
-  height: 100%;
+  margin: 0px;
 }
 
 body {
-  height: 100%;
-  margin: 0;
   background-color: black;
   color: white;
 }
@@ -22,12 +16,18 @@ body {
 }
 
 #container {
-  height: 100%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#center-container {
   display: flex;
   justify-content: center;
 }
 
-#center-container {
+#middle-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
