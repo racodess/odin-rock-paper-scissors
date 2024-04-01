@@ -54,9 +54,15 @@ body {
 
 #player-side,
 #computer-side {
+  max-height: 200px;
   display: flex;
   padding: 50px;
   gap: 100px;
+}
+
+#player-side img:hover {
+  height: 300px;
+  transition: 0.3s;
 }
 
 #left-container,
