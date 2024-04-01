@@ -3,30 +3,36 @@ function playRound(event) {
   const computerSelection = getComputerChoice();
 
   let win = false;
-  if (playerSelection === "p-rock" && computerSelection === "c-scissors")
+  if (playerSelection === "rock" && computerSelection === "scissors")
     win = true;
-  else if (playerSelection === "p-paper" && computerSelection === "c-rock")
+  else if (playerSelection === "paper" && computerSelection === "rock")
     win = true;
-  else if (playerSelection === "p-scissors" && computerSelection === "c-paper")
+  else if (playerSelection === "scissors" && computerSelection === "paper")
     win = true;
 
   displayOutcome(playerSelection, computerSelection, win);
-
-  return;
 }
 
 function getComputerChoice() {
   const choice = Math.floor(Math.random() * 3);
 
-  return choice === 0 ? "c-rock" : choice === 1 ? "c-paper" : "c-scissors";
+  return choice === 0 ? "rock" : choice === 1 ? "paper" : "scissors";
 }
 
 function animateComputerChoice(computerSelection) {
-  const selector = "#" + computerSelection;
+  const selector = "#" + "c-" + computerSelection;
   const img = document.querySelector(selector);
 
   img.style.height = "300px";
   img.style.transition = "0.1s";
+}
+
+function resetAnimations() {
+  const img = document.querySelectorAll("#computer-side img");
+
+  img.forEach((node) => {
+    node.style.height = "200px";
+  });
 }
 
 function displayOutcome(playerSelection, computerSelection, win) {
@@ -34,6 +40,7 @@ function displayOutcome(playerSelection, computerSelection, win) {
 
   if (playerSelection === computerSelection) {
     innerDiv.textContent = "Tie!";
+    animateComputerChoice(computerSelection);
   } else if (win === true) {
     pScore++;
     innerDiv.textContent = "Round Won!";
@@ -59,5 +66,6 @@ computerScore.textContent = cScore;
 const player = document.querySelectorAll("#player-side img");
 
 player.forEach((node) => {
+  node.addEventListener("click", resetAnimations);
   node.addEventListener("click", playRound);
 });
