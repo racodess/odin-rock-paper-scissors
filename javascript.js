@@ -30,24 +30,3 @@ function getComputerChoice() {
 
   return choice === 0 ? "rock" : choice === 1 ? "paper" : "scissors";
 }
-
-document.body.addEventListener("click", (event) => {
-  let target = event.target;
-  let playerSelection = "";
-  let computerSelection = getComputerChoice();
-
-  switch (target.id) {
-    case "rock":
-      playerSelection = "rock";
-      break;
-    case "paper":
-      playerSelection = "paper";
-      break;
-    case "scissors":
-      playerSelection = "scissors";
-      break;
-  }
-
-  let win = playRound(playerSelection, computerSelection);
-  playGame(playerSelection, computerSelection, win);
-});
