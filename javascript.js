@@ -1,5 +1,5 @@
-function playRound(clickEvent) {
-  const playerSelection = clickEvent.target.id;
+function playRound(event) {
+  const playerSelection = event.target.id;
   const computerSelection = getComputerChoice();
 
   let win = false;
