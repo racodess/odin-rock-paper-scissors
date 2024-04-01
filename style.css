@@ -11,13 +11,13 @@
 
 body {
   height: 100dvh;
+  margin: 0px 10px;
   display: flex;
   flex-direction: column;
-  background-color: #101010;
-  color: #e0e0e0;
+  background-color: black;
+  color: white;
   font-family: "Subway Ticker", "Noto Sans Mono", monospace;
   font-size: 36px;
-  margin: 0px 10px;
 }
 
 #header {
@@ -73,10 +73,24 @@ body {
   justify-content: start;
 }
 
-img {
-  height: 200px;
+#github-logo {
+  height: 15px;
+}
+
+a,
+a:visited {
+  color: white;
+  text-decoration-line: none;
 }
 
 .score-container {
   text-align: center;
+}
+
+.score {
+  margin: 20px;
+}
+
+img {
+  height: 200px;
 }
