@@ -56,12 +56,12 @@ body {
 #computer-side {
   display: flex;
   padding: 50px;
-  gap: 50px;
+  gap: 100px;
 }
 
 #left-container,
 #right-container {
-  width: 400px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   flex: auto;
