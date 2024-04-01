@@ -1,4 +1,15 @@
-function playGame(playerSelection, computerSelection, win) {
+function playRound(clickEvent) {
+  const playerSelection = clickEvent.target.id;
+  const computerSelection = getComputerChoice();
+
+  let win = false;
+  if (playerSelection === "rock" && computerSelection === "scissors")
+    win = true;
+  else if (playerSelection === "paper" && computerSelection === "rock")
+    win = true;
+  else if (playerSelection === "scissors" && computerSelection === "paper")
+    win = true;
+
   console.log(`\nYou chose: ${playerSelection}`);
   console.log(`Computer chose: ${computerSelection}`);
 
@@ -12,21 +23,12 @@ function playGame(playerSelection, computerSelection, win) {
   return;
 }
 
-function playRound(playerSelection, computerSelection) {
-  let win = false;
-
-  if (playerSelection === "rock" && computerSelection === "scissors")
-    win = true;
-  else if (playerSelection === "paper" && computerSelection === "rock")
-    win = true;
-  else if (playerSelection === "scissors" && computerSelection === "paper")
-    win = true;
-
-  return win;
-}
-
 function getComputerChoice() {
   const choice = Math.floor(Math.random() * 3);
 
   return choice === 0 ? "rock" : choice === 1 ? "paper" : "scissors";
 }
+
+const player = document.querySelectorAll("#player-side img");
+
+player.forEach(addEventListener("click", playRound));
